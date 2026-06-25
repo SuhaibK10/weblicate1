@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.jpeg" alt="Weblicate" width={110} height={55} className="object-contain" />
+          <Image src="/logo.jpeg" alt="Weblicate" width={80} height={40} className="object-contain" />
         </Link>
 
         {/* Desktop center nav */}

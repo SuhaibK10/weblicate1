@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Left */}
         <div>
           <Link href="/">
-            <Image src="/logo.jpeg" alt="Weblicate" width={100} height={50} className="object-contain" />
+            <Image src="/logo.jpeg" alt="Weblicate" width={75} height={38} className="object-contain" />
           </Link>
           <p className="text-sm text-muted mt-4 leading-relaxed max-w-xs">
             Web · AI · ERP · Healthcare · EdTech

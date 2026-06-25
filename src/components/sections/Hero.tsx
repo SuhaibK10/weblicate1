@@ -30,7 +30,7 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center justify-center text-center px-6 py-24">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 max-w-4xl mx-auto w-full -mt-16">
 
         {/* Eyebrow */}
         
