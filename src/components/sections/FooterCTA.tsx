@@ -6,15 +6,13 @@ export default function FooterCTA() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02)_0%,transparent_60%)] pointer-events-none" />
 
       <FadeIn>
-        <p className="text-xs text-subtle uppercase tracking-widest mb-8">
-          Booking Open — 2 Spots Left
-        </p>
+        
 
         <h2
           className="font-extrabold text-fg"
           style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 0.95 }}
         >
-          Have a project?
+          Have a Business Idea?
         </h2>
         <h2
           className="font-extrabold text-muted mt-2"

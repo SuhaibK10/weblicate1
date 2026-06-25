@@ -7,7 +7,6 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { label: 'Work',     href: '#work' },
   { label: 'Services', href: '#services' },
-  { label: 'Pricing',  href: '#pricing' },
   { label: 'Process',  href: '#process' },
 ]
 
@@ -37,9 +36,7 @@ export default function Navbar() {
 
         {/* Desktop right */}
         <div className="hidden md:flex items-center gap-4">
-          <span className="bg-accent-dim border border-border text-muted text-xs rounded-full px-3 py-1">
-            2 Spots Left
-          </span>
+          
           <a
             href="mailto:suhaibkhan830@gmail.com"
             className="bg-fg text-bg font-semibold text-sm rounded-lg px-4 py-2 hover:opacity-85 transition-opacity duration-200"

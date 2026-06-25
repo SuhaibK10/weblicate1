@@ -35,6 +35,10 @@ const faqs = [
     a: 'Yes. We build complete academic platforms: online test engines with question banks, study material libraries, student dashboards, batch management, and fee collection — all in one system. Works for single-branch institutes and multi-centre operations. Book a call to discuss your requirements.',
   },
   {
+    q: 'Can you build an LMS for a school, college, or educational institute?',
+    a: 'Yes. We build full Learning Management Systems for educational institutes — course creation, video lessons, quizzes, assignments, student progress tracking, certifications, and fee management. Works for schools, colleges, coaching centres, and online academies. Fully custom-built and branded to your institution.',
+  },
+  {
     q: 'Do you work with international clients?',
     a: "Yes. We work remotely with clients across UAE, Saudi Arabia, Malaysia, USA, Europe, and India. All communication is async-friendly — calls, Notion, WhatsApp, or email, whatever works for you. Payment via international transfer or UPI.",
   },

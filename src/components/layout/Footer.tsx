@@ -4,7 +4,6 @@ import Image from 'next/image'
 const pages = [
   { label: 'Work',     href: '#work' },
   { label: 'Services', href: '#services' },
-  { label: 'Pricing',  href: '#pricing' },
   { label: 'Process',  href: '#process' },
 ]
 
