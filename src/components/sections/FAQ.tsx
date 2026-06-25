@@ -3,10 +3,6 @@ import { FAQItem } from '@/components/ui/FAQItem'
 
 const faqs = [
   {
-    q: 'How much does it cost to work with Weblicate?',
-    a: 'Projects start at ₹15,000 for a landing page and ₹35,000 for a full website. AI and MVP projects are scoped individually. We share a clear proposal after a short discovery call.',
-  },
-  {
     q: 'How long does a project take?',
     a: 'Landing pages: 5–7 days. Full websites: 10–14 days. MVPs and AI systems: 3–6 weeks depending on scope. We agree on a timeline before starting.',
   },
