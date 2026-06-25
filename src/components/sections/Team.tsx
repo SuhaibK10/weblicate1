@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { FadeIn } from '@/components/animations/FadeIn'
-import { Code2, Globe, Palette, Linkedin } from 'lucide-react'
+import { Code2, Globe, Palette } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 interface Member {
@@ -121,11 +121,12 @@ export default function Team() {
             return (
               <FadeIn key={member.name} delay={i * 0.1}>
                 <motion.div
-                  className="group relative overflow-hidden bg-surface border border-border rounded-xl flex flex-col h-full cursor-default"
+                  className="group relative overflow-hidden bg-surface rounded-xl flex flex-col h-full cursor-default transition-colors duration-300"
+                  style={{ border: '1px solid rgba(255,255,255,0.07)' }}
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  style={{ borderColor: 'rgba(255,255,255,0.07)' }}
-                  whileHover={{ y: -8, borderColor: 'rgba(255,255,255,0.18)' } as object}
+                  onHoverStart={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)'}
+                  onHoverEnd={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)'}
                 >
                   {/* Pexels background image — very subtle, reveals on hover */}
                   <div className="absolute inset-0 z-0">
@@ -182,7 +183,9 @@ export default function Team() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-xs text-muted hover:text-fg mt-5 transition-colors duration-200 self-start"
                       >
-                        <Linkedin size={13} />
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                        </svg>
                         LinkedIn
                       </a>
                     )}
