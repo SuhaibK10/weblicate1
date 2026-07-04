@@ -72,21 +72,6 @@ export default function Pricing() {
         </p>
       </FadeIn>
 
-      {/* Comparison row */}
-      <FadeIn delay={0.1}>
-        <div className="flex items-center justify-between bg-surface border border-border rounded-xl p-6 mt-10 mb-10 max-w-lg">
-          <div className="text-center">
-            <p className="text-muted text-sm mb-1">Typical Agency</p>
-            <p className="text-2xl font-bold text-muted line-through">Up to $10,000</p>
-          </div>
-          <div className="text-subtle text-xl px-4">→</div>
-          <div className="text-center">
-            <p className="text-fg text-sm mb-1 font-semibold">Weblicate</p>
-            <p className="text-2xl font-bold text-fg">From ₹15,000</p>
-          </div>
-        </div>
-      </FadeIn>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl">
         {plans.map((plan, i) => (
           <FadeIn key={plan.name} delay={i * 0.08}>

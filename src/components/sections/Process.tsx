@@ -3,18 +3,18 @@ import { FadeIn } from '@/components/animations/FadeIn'
 const steps = [
   {
     number: '01',
-    title: 'Strategy & Research',
-    desc: 'We map your goals, audience, and competitive landscape before writing a line of code.',
+    title: 'Discovery Call',
+    desc: '15 minutes is enough. We agree on scope, timeline, and price upfront — nothing starts until everything is clear.',
   },
   {
     number: '02',
-    title: 'Design & Development',
-    desc: 'Design and engineering in parallel. You see real progress from day one, not the last day.',
+    title: 'Build',
+    desc: 'Design and code happen together. You get regular updates throughout — not a big reveal on the last day.',
   },
   {
     number: '03',
-    title: 'Launch & Optimise',
-    desc: 'Deployed, tested, and handed over with documentation. Post-launch support included.',
+    title: 'Ship & Support',
+    desc: 'Deployed, tested, and fully yours. Every project includes post-launch support. No handoff chaos.',
   },
 ]
 
@@ -27,7 +27,7 @@ export default function Process() {
           className="font-extrabold text-fg"
           style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
         >
-          Simple. Strategic. Seamless.
+          How a project runs.
         </h2>
       </FadeIn>
 

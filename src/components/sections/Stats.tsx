@@ -15,12 +15,12 @@ export default function Stats() {
       <div className="max-w-content mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-xs text-muted uppercase tracking-widest mb-4">Real Numbers</p>
+            <p className="text-xs text-muted uppercase tracking-widest mb-4">By the Numbers</p>
             <h2
               className="font-extrabold text-fg"
               style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
             >
-              Breaking Records Through Engineering
+              Small studio. Serious output.
             </h2>
           </div>
         </FadeIn>
