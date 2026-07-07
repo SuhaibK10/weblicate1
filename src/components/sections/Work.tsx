@@ -24,7 +24,7 @@ const projects = [
     title: 'Louis Polo',
     type: 'E-Commerce · Luggage Brand · D2C',
     tagline: 'Premium luggage, direct to consumer',
-    desc: 'Full D2C e-commerce store for a premium Indian luggage brand with 10+ years of manufacturing. Product catalog, cart, checkout, and inventory built from zero. The brand went from no digital presence to 2.47L+ products sold — global offices in Mumbai, London, and Hong Kong.',
+    desc: 'Full D2C e-commerce store for a premium Indian luggage brand with 10+ years of manufacturing. Product catalog, cart, checkout, and inventory built from zero. The brand went from no digital presence to 2.47L+ products sold. Offices in Mumbai, London, and Hong Kong.',
     stack: ['Next.js', 'Supabase', 'Tailwind', 'Vercel', 'Vercel Analytics', 'Clarity', 'Resend', 'Razorpay'],
     image: 'https://images.pexels.com/photos/7368309/pexels-photo-7368309.jpeg?auto=compress&cs=tinysrgb&w=900',
     link: 'https://louispolo.in/store',
@@ -37,7 +37,7 @@ const projects = [
     title: 'Aligarh Hostel',
     type: 'Hospitality · Student Housing · Web',
     tagline: 'Premium PG accommodation, Aligarh',
-    desc: 'Complete website for Khan Group of PG. Room showcase with virtual tours, online booking, amenities pages, and enquiry flow — positioned to convert student and parent visits into confirmed residents.',
+    desc: 'Complete website for Khan Group of PG. Room showcase with virtual tours, online booking, amenities pages, and enquiry flow. Built to convert student and parent visits into confirmed residents.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://images.pexels.com/photos/5137980/pexels-photo-5137980.jpeg?auto=compress&cs=tinysrgb&w=900',
     link: 'https://aligarhhostel.com',
@@ -50,7 +50,7 @@ const projects = [
     title: 'B&B Editorial',
     type: 'Manufacturing · B2B · Corporate Web',
     tagline: "India's most trusted acrylic manufacturer",
-    desc: "Corporate website for India's most trusted acrylic display manufacturer — 35+ years in business, 1000+ brands served across 13+ industries including telecom, banking, pharma, FMCG, and retail. Product catalog, industry pages, and a 24-hour quote system.",
+    desc: "Corporate website for India's most trusted acrylic display manufacturer. 35+ years in business, 1000+ brands served across 13+ industries including telecom, banking, pharma, FMCG, and retail. Product catalog, industry pages, and a 24-hour quote system.",
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://images.pexels.com/photos/16985134/pexels-photo-16985134.jpeg?auto=compress&cs=tinysrgb&w=900',
     link: 'https://bba-editorial.vercel.app',
@@ -63,7 +63,7 @@ const projects = [
     title: 'Adilytics Consulting',
     type: 'Consulting · Data Analytics · Web',
     tagline: 'Analytics & business consulting firm',
-    desc: 'Professional web presence for a data analytics and business consulting startup in Uttar Pradesh. Conversion-focused design built to attract enterprise clients — service pages, credibility signals, and a structured lead capture flow.',
+    desc: 'Professional web presence for a data analytics and business consulting startup in Uttar Pradesh. Conversion-focused design built to attract enterprise clients: service pages, credibility signals, and a structured lead capture flow.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://images.pexels.com/photos/8068691/pexels-photo-8068691.jpeg?auto=compress&cs=tinysrgb&w=900',
     link: null,
@@ -119,7 +119,7 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
           </span>
         </div>
 
-        {/* Brand badge — real logo or monogram fallback */}
+        {/* Brand badge: real logo or monogram fallback */}
         <div className="absolute bottom-5 left-5 flex items-end gap-3">
           <div
             className="rounded-xl flex items-center justify-center flex-shrink-0 px-4"

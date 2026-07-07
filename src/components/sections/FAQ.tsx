@@ -8,11 +8,11 @@ const faqs = [
   },
   {
     q: 'Do you work with early-stage startups?',
-    a: "Yes — most of our clients are early-stage. We're used to working with limited briefs and helping founders clarify what they actually need before building.",
+    a: "Yes, most of our clients are early-stage. We're used to working with limited briefs and helping founders clarify what they actually need before building.",
   },
   {
     q: 'What makes Weblicate different from a freelancer or agency?',
-    a: "Founder-led means you work directly with the person building your product — no account managers, no junior handoffs. We also bring ML and AI capabilities that most web studios don't have.",
+    a: "Founder-led means you work directly with the person building your product. No account managers, no junior handoffs. We also bring ML and AI capabilities that most web studios don't have.",
   },
   {
     q: 'Can you build AI features into a website?',
@@ -24,23 +24,23 @@ const faqs = [
   },
   {
     q: 'Do you build ERP systems for small and medium businesses?',
-    a: 'Yes. We build custom ERP systems — inventory, procurement, HR, finance — tailored to how your business actually operates. Unlike off-the-shelf ERP software, we build exactly what you need. Most SMB ERPs start at ₹1,50,000 depending on scope.',
+    a: 'Yes. We build custom ERP systems: inventory, procurement, HR, finance. Built around how your business actually operates, not the other way around. Most SMB ERPs start at ₹1,50,000 depending on scope.',
   },
   {
     q: 'Can you build a test and study platform for a coaching institute?',
-    a: 'Yes. We build complete academic platforms: online test engines with question banks, study material libraries, student dashboards, batch management, and fee collection — all in one system. Works for single-branch institutes and multi-centre operations. Book a call to discuss your requirements.',
+    a: 'Yes. We build complete academic platforms: online test engines with question banks, study material libraries, student dashboards, batch management, and fee collection. All in one system. Works for single-branch institutes and multi-centre operations. Book a call to discuss your requirements.',
   },
   {
     q: 'Can you build an LMS for a school, college, or educational institute?',
-    a: 'Yes. We build full Learning Management Systems for educational institutes — course creation, video lessons, quizzes, assignments, student progress tracking, certifications, and fee management. Works for schools, colleges, coaching centres, and online academies. Fully custom-built and branded to your institution.',
+    a: 'Yes. We build full Learning Management Systems for educational institutes: course creation, video lessons, quizzes, assignments, student progress tracking, certifications, and fee management. Works for schools, colleges, coaching centres, and online academies. Fully custom-built and branded to your institution.',
   },
   {
     q: 'Do you work with international clients?',
-    a: "Yes. We work remotely with clients across UAE, Saudi Arabia, Malaysia, USA, Europe, and India. All communication is async-friendly — calls, Notion, WhatsApp, or email, whatever works for you. Payment via international transfer or UPI.",
+    a: "Yes. We work remotely with clients across UAE, Saudi Arabia, Malaysia, USA, Europe, and India. All communication is async-friendly: calls, Notion, WhatsApp, or email, whatever works for you. Payment via international transfer or UPI.",
   },
   {
     q: 'Can you build a website for a doctor, dietician, or healthcare clinic?',
-    a: 'Yes. We build professional websites for doctors, dieticians, physiotherapists, and other practitioners — with appointment booking, service pages, testimonials, and trust-focused design. We also build full clinic management systems: patient records, scheduling, billing, and staff management. Healthcare clients get special attention to data privacy and professional presentation.',
+    a: 'Yes. We build professional websites for doctors, dieticians, physiotherapists, and other practitioners, including appointment booking, service pages, testimonials, and trust-focused design. We also build full clinic management systems: patient records, scheduling, billing, and staff management. Healthcare clients get special attention to data privacy and professional presentation.',
   },
 ]
 

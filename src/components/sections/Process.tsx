@@ -4,12 +4,12 @@ const steps = [
   {
     number: '01',
     title: 'Discovery Call',
-    desc: '15 minutes is enough. We agree on scope, timeline, and price upfront — nothing starts until everything is clear.',
+    desc: '15 minutes is enough. We agree on scope, timeline, and price upfront. Nothing starts until everything is clear.',
   },
   {
     number: '02',
     title: 'Build',
-    desc: 'Design and code happen together. You get regular updates throughout — not a big reveal on the last day.',
+    desc: 'Design and code happen together. You get regular updates throughout, not a big reveal on the last day.',
   },
   {
     number: '03',

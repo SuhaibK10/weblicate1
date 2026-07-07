@@ -18,7 +18,7 @@ export default function About() {
       </FadeIn>
 
       <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-16 mt-8 items-start">
-        {/* Left — pullquote + copy */}
+        {/* Left: pullquote + copy */}
         <FadeIn>
           <blockquote
             className="font-serif italic text-ink"
@@ -31,7 +31,7 @@ export default function About() {
 
           <div className="font-sans text-ink-2 leading-[1.8] space-y-4" style={{ fontSize: '1.05rem' }}>
             <p>
-              Weblicate was started in November 2024 by Suhaib Khan — a Computer Science student at
+              Weblicate was started in November 2024 by Suhaib Khan, a Computer Science student at
               Aligarh Muslim University and ML engineer. The mission: give startups access to serious
               engineering without agency overhead or junior freelancers.
             </p>
@@ -53,7 +53,7 @@ export default function About() {
           </a>
         </FadeIn>
 
-        {/* Right — credential timeline */}
+        {/* Right: credential timeline */}
         <FadeIn delay={0.12}>
           <div>
             {credentials.map((cred, i) => (

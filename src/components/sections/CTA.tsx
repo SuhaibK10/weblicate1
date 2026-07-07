@@ -24,7 +24,7 @@ export default function CTA() {
           className="font-sans mb-10 max-w-md mx-auto leading-relaxed"
           style={{ fontSize: '1rem', color: 'rgba(240,237,230,0.5)' }}
         >
-          Let&apos;s build something that works. Reach out directly — no forms, no gatekeepers.
+          Let&apos;s build something that works. Reach out directly. No forms, no gatekeepers.
         </p>
 
         <div className="flex items-center justify-center gap-4 flex-wrap">

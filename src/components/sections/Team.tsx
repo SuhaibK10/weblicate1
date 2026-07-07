@@ -128,7 +128,7 @@ export default function Team() {
                   onHoverStart={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)'}
                   onHoverEnd={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)'}
                 >
-                  {/* Pexels background image — very subtle, reveals on hover */}
+                  {/* Background image, very subtle, reveals on hover */}
                   <div className="absolute inset-0 z-0">
                     <Image
                       src={member.image}
@@ -141,7 +141,7 @@ export default function Team() {
                     <div className="absolute inset-0 bg-gradient-to-b from-surface/50 via-surface/80 to-surface" />
                   </div>
 
-                  {/* Decorative large icon — watermark in top-right */}
+                  {/* Decorative large icon, watermark top-right */}
                   <div
                     className="absolute top-4 right-4 z-0 opacity-[0.05] group-hover:opacity-[0.09] transition-opacity duration-300"
                     aria-hidden="true"

@@ -18,7 +18,7 @@ export default function Testimonials() {
         <div className="mt-12 max-w-2xl bg-surface border border-border rounded-xl p-8">
           <Quote size={28} className="text-muted mb-5 opacity-40" />
           <p className="text-lg text-fg leading-relaxed">
-            Suhaib understood what we needed and delivered without any hassle. The site works exactly as we needed — clean, fast, and professional.
+            Suhaib understood what we needed and delivered without any hassle. The site works exactly as we needed. Clean, fast, professional.
           </p>
           <div className="flex items-center gap-3 mt-6">
             <div className="w-10 h-10 rounded-full bg-elevated flex items-center justify-center text-sm font-bold text-muted flex-shrink-0">

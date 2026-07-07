@@ -2,6 +2,7 @@ import Navbar       from '@/components/layout/Navbar'
 import Footer       from '@/components/layout/Footer'
 import Hero         from '@/components/sections/Hero'
 import GlobalStrip  from '@/components/sections/GlobalStrip'
+import TechStack    from '@/components/sections/TechStack'
 import Work         from '@/components/sections/Work'
 import Services     from '@/components/sections/Services'
 import Process      from '@/components/sections/Process'
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <GlobalStrip />
+        <TechStack />
 
         <section id="services" className="py-24 px-6 max-w-content mx-auto">
           <Services />

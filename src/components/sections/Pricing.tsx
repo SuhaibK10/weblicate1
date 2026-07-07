@@ -126,7 +126,7 @@ export default function Pricing() {
               <h3 className="text-2xl font-bold text-fg">ERP, LMS & Academic Platforms</h3>
               <p className="text-muted text-sm mt-2 max-w-xl leading-relaxed">
                 Building an LMS for your institute? An ERP for your business? A test platform for
-                a coaching centre? These are scoped individually — book a call and we&apos;ll send
+                a coaching centre? These are scoped individually. Book a call and we&apos;ll send
                 a clear proposal within 24 hours.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">

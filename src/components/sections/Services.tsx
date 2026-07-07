@@ -44,14 +44,14 @@ const services: {
   {
     icon: LayoutGrid,
     title: 'ERP Systems',
-    desc: 'Custom enterprise resource planning built around your actual workflows — not off-the-shelf software.',
+    desc: 'Custom enterprise resource planning built around your actual workflows, not off-the-shelf software.',
     items: ['Inventory & Procurement', 'HR & Payroll', 'Finance & Reporting', 'Custom Workflows'],
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     icon: BookOpen,
     title: 'LMS for Educational Institutes',
-    desc: 'Full Learning Management Systems for schools, colleges, and online academies — all under your brand.',
+    desc: 'Full Learning Management Systems for schools, colleges, and online academies. Fully branded to your institution.',
     items: ['Course & Video Lessons', 'Quizzes & Assignments', 'Student Progress Tracking', 'Certificates & Fee Management'],
     image: 'https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
@@ -72,7 +72,7 @@ const services: {
   {
     icon: ClipboardPlus,
     title: 'Clinic Management Systems',
-    desc: 'Complete operational software for clinics — patient records, appointments, billing, staff, and reporting.',
+    desc: 'Complete operational software for clinics: patient records, appointments, billing, staff, and reporting.',
     items: ['Patient Records (EMR)', 'Appointment Scheduling', 'Billing & Invoicing', 'Staff & Inventory'],
     image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
@@ -114,7 +114,7 @@ export default function Services() {
                       background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 40%, var(--color-surface) 100%)',
                     }}
                   />
-                  {/* Icon badge — bottom-left */}
+                  {/* Icon badge, bottom-left */}
                   <div className="absolute bottom-4 left-5">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center"

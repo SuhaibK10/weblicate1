@@ -10,12 +10,12 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Weblicate — Websites, AI & MVPs for Startups',
+  title: 'Weblicate | Websites, AI & MVPs for Startups',
   description: 'Weblicate builds production-ready websites, AI systems, and MVPs. Founder-led tech studio. Ships in 14 days.',
   keywords: ['web development', 'AI systems', 'MVP development', 'startup studio India', 'Next.js'],
   authors: [{ name: 'Suhaib Khan' }],
   openGraph: {
-    title: 'Weblicate — Websites, AI & MVPs for Startups',
+    title: 'Weblicate | Websites, AI & MVPs for Startups',
     description: 'Not another dev shop. We build what your startup needs and ship it in 14 days.',
     url: 'https://weblicate.in',
     siteName: 'Weblicate',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Weblicate — Websites, AI & MVPs for Startups',
+    title: 'Weblicate | Websites, AI & MVPs for Startups',
     description: 'Not another dev shop. We build what your startup needs and ship it in 14 days.',
   },
   robots: { index: true, follow: true },
