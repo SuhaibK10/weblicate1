@@ -28,7 +28,17 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center text-center px-6 py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
+      {/* Dot grid */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
+        <defs>
+          <pattern id="hero-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(255,255,255,0.15)" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-dots)" />
+      </svg>
+      {/* Radial fade so dots vanish toward edges and don't distract from content */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#080808_75%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto w-full -mt-16">
 

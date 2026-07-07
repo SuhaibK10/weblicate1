@@ -6,10 +6,8 @@ const row1 = [
   { name: 'React',      icon: 'logos:react' },
   { name: 'TypeScript', icon: 'logos:typescript-icon' },
   { name: 'Supabase',   icon: 'logos:supabase-icon' },
-  { name: 'Vercel',     icon: 'logos:vercel-icon' },
   { name: 'Cloudflare', icon: 'logos:cloudflare-icon' },
   { name: 'Python',     icon: 'logos:python' },
-  { name: 'Tailwind',   icon: 'logos:tailwind-css-icon' },
   { name: 'Node.js',    icon: 'logos:nodejs-icon' },
 ]
 
@@ -21,7 +19,6 @@ const row2 = [
   { name: 'Figma',      icon: 'logos:figma' },
   { name: 'n8n',        icon: 'simple-icons:n8n' },
   { name: 'Docker',     icon: 'logos:docker-icon' },
-  { name: 'Framer',     icon: 'logos:framer' },
   { name: 'GraphQL',    icon: 'logos:graphql' },
   { name: 'AWS',        icon: 'logos:aws' },
 ]
@@ -38,7 +35,7 @@ function TechItem({ name, icon }: { name: string; icon: string }) {
 export default function TechStack() {
   return (
     <div className="border-y border-border bg-surface py-8 overflow-hidden">
-      <p className="text-xs text-subtle uppercase tracking-widest text-center mb-6 px-6">
+      <p className="text-xs text-muted uppercase tracking-widest text-center mb-6 px-6">
         Every technology your product needs
       </p>
 

@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
         hostname: 'images.pexels.com',
         pathname: '/photos/**',
       },
-
+      {
+        protocol: 'https',
+        hostname: 'image.thum.io',
+      },
     ],
   },
 }

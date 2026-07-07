@@ -6,14 +6,14 @@ export default function CTA() {
       <FadeIn>
         <p
           className="font-mono uppercase tracking-widest mb-6"
-          style={{ fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(240,237,230,0.4)' }}
+          style={{ fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(240,237,230,0.65)' }}
         >
           (Start a project)
         </p>
 
         <h2
-          className="font-serif italic font-semibold text-background leading-[1.0] mb-4"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
+          className="font-serif italic font-semibold leading-[1.0] mb-4"
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#ffffff' }}
         >
           Have a project
           <br />
@@ -22,7 +22,7 @@ export default function CTA() {
 
         <p
           className="font-sans mb-10 max-w-md mx-auto leading-relaxed"
-          style={{ fontSize: '1rem', color: 'rgba(240,237,230,0.5)' }}
+          style={{ fontSize: '1rem', color: 'rgba(240,237,230,0.75)' }}
         >
           Let&apos;s build something that works. Reach out directly. No forms, no gatekeepers.
         </p>

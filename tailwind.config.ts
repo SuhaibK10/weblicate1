@@ -6,15 +6,15 @@ const config: Config = {
     extend: {
       colors: {
         bg:           '#080808',
-        surface:      '#111111',
-        elevated:     '#1a1a1a',
-        border:       'rgba(255,255,255,0.07)',
-        'border-hover': 'rgba(255,255,255,0.14)',
-        fg:           '#f5f5f5',
-        muted:        '#888888',
-        subtle:       '#555555',
+        surface:      '#161616',
+        elevated:     '#222222',
+        border:       'rgba(255,255,255,0.13)',
+        'border-hover': 'rgba(255,255,255,0.28)',
+        fg:           '#ffffff',
+        muted:        '#c0c0c0',
+        subtle:       '#888888',
         accent:       '#ffffff',
-        'accent-dim': 'rgba(255,255,255,0.06)',
+        'accent-dim': 'rgba(255,255,255,0.10)',
       },
       fontFamily: {
         sans: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],

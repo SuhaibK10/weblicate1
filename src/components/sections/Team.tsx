@@ -95,7 +95,7 @@ export default function Team() {
       >
         <defs>
           <pattern id="team-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(255,255,255,0.035)" />
+            <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(255,255,255,0.15)" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#team-dots)" />
@@ -122,11 +122,11 @@ export default function Team() {
               <FadeIn key={member.name} delay={i * 0.1}>
                 <motion.div
                   className="group relative overflow-hidden bg-surface rounded-xl flex flex-col h-full cursor-default transition-colors duration-300"
-                  style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+                  style={{ border: '1px solid rgba(255,255,255,0.13)' }}
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  onHoverStart={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)'}
-                  onHoverEnd={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)'}
+                  onHoverStart={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.35)'}
+                  onHoverEnd={e => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.13)'}
                 >
                   {/* Background image, very subtle, reveals on hover */}
                   <div className="absolute inset-0 z-0">

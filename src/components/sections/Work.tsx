@@ -26,7 +26,7 @@ const projects = [
     tagline: 'Premium luggage, direct to consumer',
     desc: 'Full D2C e-commerce store for a premium Indian luggage brand with 10+ years of manufacturing. Product catalog, cart, checkout, and inventory built from zero. The brand went from no digital presence to 2.47L+ products sold. Offices in Mumbai, London, and Hong Kong.',
     stack: ['Next.js', 'Supabase', 'Tailwind', 'Vercel', 'Vercel Analytics', 'Clarity', 'Resend', 'Razorpay'],
-    image: 'https://images.pexels.com/photos/7368309/pexels-photo-7368309.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: 'https://image.thum.io/get/width/1200/crop/630/https://louispolo.in/store',
     link: 'https://louispolo.in/store',
     featured: true,
   },
@@ -39,7 +39,7 @@ const projects = [
     tagline: 'Premium PG accommodation, Aligarh',
     desc: 'Complete website for Khan Group of PG. Room showcase with virtual tours, online booking, amenities pages, and enquiry flow. Built to convert student and parent visits into confirmed residents.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
-    image: 'https://images.pexels.com/photos/5137980/pexels-photo-5137980.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: 'https://image.thum.io/get/width/1200/crop/630/https://aligarhhostel.com',
     link: 'https://aligarhhostel.com',
     featured: false,
   },
@@ -52,7 +52,7 @@ const projects = [
     tagline: "India's most trusted acrylic manufacturer",
     desc: "Corporate website for India's most trusted acrylic display manufacturer. 35+ years in business, 1000+ brands served across 13+ industries including telecom, banking, pharma, FMCG, and retail. Product catalog, industry pages, and a 24-hour quote system.",
     stack: ['Next.js', 'Tailwind', 'Vercel'],
-    image: 'https://images.pexels.com/photos/16985134/pexels-photo-16985134.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: 'https://image.thum.io/get/width/1200/crop/630/https://bba-editorial.vercel.app',
     link: 'https://bba-editorial.vercel.app',
     featured: false,
   },
@@ -91,7 +91,7 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
       className="group relative bg-surface border border-border rounded-2xl overflow-hidden flex flex-col h-full"
       whileHover={{ y: -6 }}
       transition={{ duration: 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
-      style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+      style={{ borderColor: 'rgba(255,255,255,0.13)' }}
     >
       {/* Photo panel */}
       <div className={`relative ${imageHeight} overflow-hidden flex-shrink-0 bg-[#0a0a0a]`}>
@@ -99,7 +99,7 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover opacity-40 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700 ease-out"
+          className="object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
 
@@ -193,7 +193,6 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
 }
 
 export default function Work() {
-  const [p01, p02, p03, p04] = projects
 
   return (
     <div>
@@ -208,25 +207,12 @@ export default function Work() {
         
       </FadeIn>
 
-      {/* Magazine-style asymmetric grid */}
-      <div className="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-4">
-
-        {/* Row 1: featured left (3 cols) + regular right (2 cols) */}
-        <FadeIn delay={0.06} className="lg:col-span-3">
-          <ProjectCard project={p01} imageHeight="h-56" />
-        </FadeIn>
-        <FadeIn delay={0.12} className="lg:col-span-2">
-          <ProjectCard project={p02} imageHeight="h-56" />
-        </FadeIn>
-
-        {/* Row 2: regular left (2 cols) + featured right (3 cols) */}
-        <FadeIn delay={0.18} className="lg:col-span-2">
-          <ProjectCard project={p03} imageHeight="h-56" />
-        </FadeIn>
-        <FadeIn delay={0.24} className="lg:col-span-3">
-          <ProjectCard project={p04} imageHeight="h-56" />
-        </FadeIn>
-
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.map((project, i) => (
+          <FadeIn key={project.id} delay={i * 0.08}>
+            <ProjectCard project={project} imageHeight="h-64" />
+          </FadeIn>
+        ))}
       </div>
     </div>
   )
