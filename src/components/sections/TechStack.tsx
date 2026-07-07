@@ -9,7 +9,6 @@ const row1 = [
   { name: 'Vercel',     icon: 'logos:vercel-icon' },
   { name: 'Cloudflare', icon: 'logos:cloudflare-icon' },
   { name: 'Python',     icon: 'logos:python' },
-  { name: 'OpenAI',     icon: 'simple-icons:openai' },
   { name: 'Tailwind',   icon: 'logos:tailwind-css-icon' },
   { name: 'Node.js',    icon: 'logos:nodejs-icon' },
 ]
@@ -30,8 +29,8 @@ const row2 = [
 function TechItem({ name, icon }: { name: string; icon: string }) {
   return (
     <span className="flex items-center gap-2.5 px-6 flex-shrink-0 select-none">
-      <Icon icon={icon} width={18} height={18} className="opacity-80" />
-      <span className="text-sm font-medium text-subtle tracking-wide">{name}</span>
+      <Icon icon={icon} width={24} height={24} className="opacity-100" />
+      <span className="text-sm font-medium text-muted tracking-wide">{name}</span>
     </span>
   )
 }
