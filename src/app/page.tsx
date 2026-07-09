@@ -23,9 +23,6 @@ export default function Home() {
           <Services />
         </section>
 
-        <section id="work" className="py-24 px-6 max-w-content mx-auto border-t border-border">
-          <Work />
-        </section>
 
 <section id="process" className="py-24 px-6 max-w-content mx-auto border-t border-border">
           <Process />
