@@ -35,8 +35,8 @@ function TechItem({ name, icon }: { name: string; icon: string }) {
 export default function TechStack() {
   return (
     <div className="border-y border-border bg-surface py-8 overflow-hidden">
-      <p className="text-xs text-muted uppercase tracking-widest text-center mb-6 px-6">
-        Every technology your product needs
+      <p className="font-mono text-subtle uppercase text-center mb-6 px-6" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
+        Built on infrastructure you already trust
       </p>
 
       {/* Edge fades */}

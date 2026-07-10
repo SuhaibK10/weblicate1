@@ -48,14 +48,15 @@ export default function FAQ() {
   return (
     <div>
       <FadeIn>
-        <p className="text-xs text-muted uppercase tracking-widest mb-3">FAQ</p>
+        <p className="font-mono text-subtle uppercase mb-4" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
+          FAQ
+        </p>
         <h2
           className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '-0.02em' }}
         >
-          Answers to Common Questions
+          Before we start.
         </h2>
-        <p className="text-muted text-base mt-3">Everything you need to know before we start.</p>
       </FadeIn>
 
       <div className="max-w-3xl mt-12">

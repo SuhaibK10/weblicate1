@@ -24,7 +24,7 @@ const projects = [
     title: 'Louis Polo',
     type: 'E-Commerce · Luggage Brand · D2C',
     tagline: 'Premium luggage, direct to consumer',
-    desc: 'Full D2C e-commerce store for a premium Indian luggage brand with 10+ years of manufacturing. Product catalog, cart, checkout, and inventory built from zero. The brand went from no digital presence to 2.47L+ products sold. Offices in Mumbai, London, and Hong Kong.',
+    desc: 'A ten-year-old luggage manufacturer became a direct-to-consumer brand. Catalog, checkout, and inventory built from zero. 2.47L+ products sold, with offices in Mumbai, London, and Hong Kong.',
     stack: ['Next.js', 'Supabase', 'Tailwind', 'Vercel', 'Vercel Analytics', 'Clarity', 'Resend', 'Razorpay'],
     image: 'https://image.thum.io/get/width/1200/crop/630/https://louispolo.in/store',
     link: 'https://louispolo.in/store',
@@ -36,8 +36,8 @@ const projects = [
     logoUrl: '/logos/aligarhhostel.png',
     title: 'Aligarh Hostel',
     type: 'Hospitality · Student Housing · Web',
-    tagline: 'Premium PG accommodation, Aligarh',
-    desc: 'Complete website for Khan Group of PG. Room showcase with virtual tours, online booking, amenities pages, and enquiry flow. Built to convert student and parent visits into confirmed residents.',
+    tagline: 'Premium student housing, Aligarh',
+    desc: 'Student housing turned into a booking operation: virtual tours, live availability, and an enquiry-to-resident pipeline for the Khan Group of PG.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://image.thum.io/get/width/1200/crop/630/https://aligarhhostel.com',
     link: 'https://aligarhhostel.com',
@@ -50,7 +50,7 @@ const projects = [
     title: 'B&B Editorial',
     type: 'Manufacturing · B2B · Corporate Web',
     tagline: "India's most trusted acrylic manufacturer",
-    desc: "Corporate website for India's most trusted acrylic display manufacturer. 35+ years in business, 1000+ brands served across 13+ industries including telecom, banking, pharma, FMCG, and retail. Product catalog, industry pages, and a 24-hour quote system.",
+    desc: "Thirty-five years of manufacturing made legible: 1,000+ brands across 13 industries, a full product catalog, and a 24-hour quote system for India's most trusted acrylic display manufacturer.",
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://image.thum.io/get/width/1200/crop/630/https://bba-editorial.vercel.app',
     link: 'https://bba-editorial.vercel.app',
@@ -63,7 +63,7 @@ const projects = [
     title: 'Adilytics Consulting',
     type: 'Consulting · Data Analytics · Web',
     tagline: 'Analytics & business consulting firm',
-    desc: 'Professional web presence for a data analytics and business consulting startup in Uttar Pradesh. Conversion-focused design built to attract enterprise clients: service pages, credibility signals, and a structured lead capture flow.',
+    desc: 'Enterprise credibility for a data consultancy, engineered to convert: service architecture, credibility signals, and a structured lead pipeline.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://images.pexels.com/photos/8068691/pexels-photo-8068691.jpeg?auto=compress&cs=tinysrgb&w=900',
     link: null,
@@ -114,8 +114,8 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
         {/* Top row: id + Live badge */}
         <div className="absolute top-4 left-5 right-5 flex items-center justify-between">
           <span className="text-xs font-mono text-white/40">{project.id}</span>
-          <span className="text-xs text-green-400 border border-green-400/25 bg-green-400/10 rounded-full px-2.5 py-0.5">
-            Live
+          <span className="text-xs font-mono text-white/60 border border-white/20 rounded px-2.5 py-0.5">
+            In production
           </span>
         </div>
 
@@ -185,7 +185,7 @@ function ProjectCard({ project, imageHeight }: { project: Project; imageHeight: 
             />
           </a>
         ) : (
-          <p className="text-xs text-subtle mt-5">Private client</p>
+          <p className="text-xs font-mono text-subtle mt-5">In production — private</p>
         )}
       </div>
     </motion.div>
@@ -197,14 +197,15 @@ export default function Work() {
   return (
     <div>
       <FadeIn>
-        <p className="text-xs text-muted uppercase tracking-widest mb-3">Our Work</p>
+        <p className="font-mono text-subtle uppercase mb-4" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
+          (05) &nbsp;Selected Work
+        </p>
         <h2
           className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '-0.02em' }}
         >
-          Clients Served 
+          Systems in production.
         </h2>
-        
       </FadeIn>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">

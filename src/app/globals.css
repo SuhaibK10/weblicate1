@@ -8,18 +8,26 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: #080808;
-    color: #f5f5f5;
-    font-family: var(--font-jakarta), system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #f7f6f3;
+    font-family: var(--font-geist), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::selection { background: rgba(255,255,255,0.22); color: #ffffff; }
+  ::selection { background: rgba(77,107,254,0.35); color: #ffffff; }
 
   ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #080808; }
-  ::-webkit-scrollbar-thumb { background: #555; border-radius: 2px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {

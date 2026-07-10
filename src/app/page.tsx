@@ -1,14 +1,15 @@
 import Navbar       from '@/components/layout/Navbar'
 import Footer       from '@/components/layout/Footer'
 import Hero         from '@/components/sections/Hero'
-import GlobalStrip  from '@/components/sections/GlobalStrip'
+import Mission      from '@/components/sections/Mission'
 import TechStack    from '@/components/sections/TechStack'
+import Capabilities from '@/components/sections/Capabilities'
+import Industries   from '@/components/sections/Industries'
 import Work         from '@/components/sections/Work'
-import Services     from '@/components/sections/Services'
-import Process      from '@/components/sections/Process'
-import Team         from '@/components/sections/Team'
+import Philosophy   from '@/components/sections/Philosophy'
+import WhyWeblicate from '@/components/sections/WhyWeblicate'
 import FAQ          from '@/components/sections/FAQ'
-import FooterCTA    from '@/components/sections/FooterCTA'
+import Contact      from '@/components/sections/Contact'
 
 export default function Home() {
   return (
@@ -16,27 +17,38 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <GlobalStrip />
+
+        <section id="mission" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
+          <Mission />
+        </section>
+
         <TechStack />
 
-        <section id="services" className="py-24 px-6 max-w-content mx-auto">
-          <Services />
+        <section id="capabilities" className="py-32 md:py-40 px-6 max-w-content mx-auto">
+          <Capabilities />
         </section>
 
-
-<section id="process" className="py-24 px-6 max-w-content mx-auto border-t border-border">
-          <Process />
+        <section id="industries" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
+          <Industries />
         </section>
 
-<section id="team" className="py-24 px-6 max-w-content mx-auto border-t border-border">
-          <Team />
+        <section id="work" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
+          <Work />
         </section>
 
-        <section id="faq" className="py-24 px-6 max-w-content mx-auto border-t border-border">
+        <section id="philosophy" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
+          <Philosophy />
+        </section>
+
+        <section id="why" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
+          <WhyWeblicate />
+        </section>
+
+        <section id="faq" className="py-32 md:py-40 px-6 max-w-content mx-auto border-t border-border">
           <FAQ />
         </section>
 
-        <FooterCTA />
+        <Contact />
       </main>
       <Footer />
     </>

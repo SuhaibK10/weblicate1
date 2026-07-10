@@ -5,19 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg:           '#080808',
-        surface:      '#161616',
-        elevated:     '#222222',
-        border:       'rgba(255,255,255,0.13)',
-        'border-hover': 'rgba(255,255,255,0.28)',
-        fg:           '#ffffff',
-        muted:        '#c0c0c0',
-        subtle:       '#888888',
-        accent:       '#ffffff',
-        'accent-dim': 'rgba(255,255,255,0.10)',
+        bg:           '#0a0a0a',
+        surface:      '#141414',
+        elevated:     '#1e1e1e',
+        border:       'rgba(247,246,243,0.12)',
+        'border-hover': 'rgba(247,246,243,0.28)',
+        fg:           '#f7f6f3',
+        muted:        '#a8a6a0',
+        subtle:       '#6e6c66',
+        accent:       '#4d6bfe',
+        'accent-dim': 'rgba(247,246,243,0.08)',
       },
       fontFamily: {
-        sans: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
+        sans:  ['var(--font-geist)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-newsreader)', 'Georgia', 'serif'],
+        mono:  ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
       maxWidth: {
         content: '1200px',

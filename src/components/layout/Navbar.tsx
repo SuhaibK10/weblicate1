@@ -3,11 +3,13 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
+import { CONTACT_HREF } from '@/lib/site'
 
 const navLinks = [
-  { label: 'Work',     href: '#work' },
-  { label: 'Services', href: '#services' },
-  { label: 'Process',  href: '#process' },
+  { label: 'Capabilities', href: '#capabilities' },
+  { label: 'Industries',   href: '#industries' },
+  { label: 'Work',         href: '#work' },
+  { label: 'Philosophy',   href: '#philosophy' },
 ]
 
 export default function Navbar() {
@@ -36,12 +38,11 @@ export default function Navbar() {
 
         {/* Desktop right */}
         <div className="hidden md:flex items-center gap-4">
-          
           <a
-            href="mailto:suhaibkhan830@gmail.com"
-            className="bg-fg text-bg font-semibold text-sm rounded-lg px-4 py-2 hover:opacity-85 transition-opacity duration-200"
+            href={CONTACT_HREF}
+            className="bg-fg text-bg font-semibold text-sm rounded px-4 py-2 hover:opacity-85 transition-opacity duration-200"
           >
-            Book a Call
+            Talk to us
           </a>
         </div>
 
@@ -55,24 +56,27 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — numbered list, CTA at bottom */}
       {open && (
-        <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-md px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((link) => (
+        <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-md px-6 py-8 flex flex-col gap-6">
+          {navLinks.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-muted hover:text-fg transition-colors duration-200"
+              className="flex items-baseline gap-4 text-xl font-semibold text-fg"
             >
+              <span className="font-mono text-subtle text-xs">
+                {String(i + 1).padStart(2, '0')}
+              </span>
               {link.label}
             </a>
           ))}
           <a
-            href="mailto:suhaibkhan830@gmail.com"
-            className="bg-fg text-bg font-semibold text-sm rounded-lg px-4 py-3 hover:opacity-85 transition-opacity duration-200 text-center mt-2"
+            href={CONTACT_HREF}
+            className="bg-fg text-bg font-semibold text-sm rounded px-4 py-3.5 hover:opacity-85 transition-opacity duration-200 text-center mt-4"
           >
-            Book a Call
+            Talk to us
           </a>
         </div>
       )}
