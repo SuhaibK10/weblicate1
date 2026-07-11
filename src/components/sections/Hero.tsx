@@ -32,7 +32,7 @@ export default function Hero() {
 
         <h1
           className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(3.5rem, 9vw, 8rem)', lineHeight: 0.95, letterSpacing: '-0.02em' }}
+          style={{ fontSize: 'clamp(2.5rem, 9vw, 8rem)', lineHeight: 0.95, letterSpacing: '-0.02em' }}
         >
           {lines.map((line, i) => (
             <span key={line} className="block overflow-hidden">

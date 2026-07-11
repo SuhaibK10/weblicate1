@@ -7,6 +7,9 @@
 
   html { scroll-behavior: smooth; }
 
+  /* No element may widen the page; sections that scroll do so internally */
+  html, body { overflow-x: clip; }
+
   body {
     background: #0a0a0a;
     color: #f7f6f3;
