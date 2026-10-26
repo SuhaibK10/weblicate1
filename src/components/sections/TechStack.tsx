@@ -1,7 +1,7 @@
 'use client'
 import { Icon } from '@iconify/react'
 
-const row1 = [
+const stack = [
   { name: 'Next.js',    icon: 'logos:nextjs-icon' },
   { name: 'React',      icon: 'logos:react' },
   { name: 'TypeScript', icon: 'logos:typescript-icon' },
@@ -9,57 +9,32 @@ const row1 = [
   { name: 'Cloudflare', icon: 'logos:cloudflare-icon' },
   { name: 'Python',     icon: 'logos:python' },
   { name: 'Node.js',    icon: 'logos:nodejs-icon' },
-]
-
-const row2 = [
   { name: 'Shopify',    icon: 'logos:shopify' },
   { name: 'PostgreSQL', icon: 'logos:postgresql' },
-  { name: 'Stripe',     icon: 'logos:stripe' },
+  { name: 'Stripe',     icon: 'simple-icons:stripe' },
   { name: 'Razorpay',   icon: 'simple-icons:razorpay' },
   { name: 'Figma',      icon: 'logos:figma' },
   { name: 'n8n',        icon: 'simple-icons:n8n' },
   { name: 'Docker',     icon: 'logos:docker-icon' },
   { name: 'GraphQL',    icon: 'logos:graphql' },
-  { name: 'AWS',        icon: 'logos:aws' },
+  { name: 'AWS',        icon: 'mdi:aws' },
 ]
 
-function TechItem({ name, icon }: { name: string; icon: string }) {
-  return (
-    <span className="flex items-center gap-2.5 px-6 flex-shrink-0 select-none">
-      <Icon icon={icon} width={24} height={24} className="opacity-100" />
-      <span className="text-sm font-medium text-muted tracking-wide">{name}</span>
-    </span>
-  )
-}
-
+// Rounded icon tiles drifting sideways, faded at both edges
 export default function TechStack() {
   return (
-    <div className="border-y border-border bg-surface py-8 overflow-hidden">
-      <p className="font-mono text-subtle uppercase text-center mb-6 px-6" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-        Built on infrastructure you already trust
-      </p>
-
-      {/* Edge fades */}
-      <div
-        className="relative"
-        style={{
-          maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
-        }}
-      >
-        {/* Row 1: left */}
-        <div className="flex whitespace-nowrap animate-marquee mb-4">
-          {[...row1, ...row1].map((t, i) => (
-            <TechItem key={i} name={t.name} icon={t.icon} />
-          ))}
-        </div>
-
-        {/* Row 2: right */}
-        <div className="flex whitespace-nowrap animate-marquee-rev">
-          {[...row2, ...row2].map((t, i) => (
-            <TechItem key={i} name={t.name} icon={t.icon} />
-          ))}
-        </div>
+    <div aria-label="Built on infrastructure you already trust" className="fade-x overflow-hidden py-4">
+      <div className="flex w-max animate-marquee gap-6 md:gap-10">
+        {[...stack, ...stack].map((t, i) => (
+          <div
+            key={i}
+            title={t.name}
+            aria-hidden={i >= stack.length}
+            className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#1a1a1a] to-[#101010] shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+          >
+            <Icon icon={t.icon} width={26} height={26} className={t.icon.startsWith('logos:') ? '' : 'text-fg'} />
+          </div>
+        ))}
       </div>
     </div>
   )

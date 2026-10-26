@@ -3,45 +3,37 @@ import { CONTACT_EMAIL, CONTACT_HREF, LINKEDIN_URL } from '@/lib/site'
 
 export default function Contact() {
   return (
-    <section className="relative py-40 px-6 border-t border-border bg-surface overflow-hidden">
-      <div className="max-w-content mx-auto">
-        <FadeIn>
-          <p className="font-mono text-subtle uppercase mb-8" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-            (08) &nbsp;Contact
-          </p>
+    <section id="contact" className="relative overflow-hidden px-6 py-32 md:py-40">
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 h-[480px] w-[1000px] max-w-[160%] -translate-x-1/2"
+        style={{ background: 'radial-gradient(ellipse at bottom, rgba(47,176,168,0.14) 0%, transparent 65%)' }}
+        aria-hidden="true"
+      />
 
-          <h2
-            className="font-extrabold text-fg max-w-4xl"
-            style={{ fontSize: 'clamp(2.75rem, 6.5vw, 5.5rem)', lineHeight: 0.98, letterSpacing: '-0.02em' }}
-          >
-            Tell us what you&apos;re trying to build.
-          </h2>
+      <FadeIn className="relative mx-auto flex max-w-content flex-col items-center text-center">
+        <h2
+          className="max-w-2xl font-normal text-fg text-balance"
+          style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '-0.025em' }}
+        >
+          Tell us what you&apos;re trying to build.
+        </h2>
 
-          <p className="text-muted max-w-lg mt-8 leading-relaxed" style={{ fontSize: '1.0625rem' }}>
-            A 20-minute conversation is enough to know if we can help. Scope,
-            timeline, and price in writing within 48 hours.
-          </p>
+        <p className="mt-5 max-w-lg text-lg leading-snug text-muted text-balance">
+          A 20-minute conversation is enough to know if we can help. Scope,
+          timeline, and price in writing within 48 hours.
+        </p>
 
-          <div className="flex items-center gap-4 mt-12 flex-wrap">
-            <a
-              href={CONTACT_HREF}
-              className="bg-fg text-bg font-semibold text-base rounded px-7 py-3.5 hover:opacity-85 transition-opacity duration-200"
-            >
-              Start a conversation
-            </a>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-border text-fg font-medium text-base rounded px-7 py-3.5 hover:border-border-hover transition-colors duration-200"
-            >
-              LinkedIn
-            </a>
-          </div>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href={CONTACT_HREF} className="pill-solid">Start a conversation</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="pill px-6 py-3 text-[0.9375rem]">
+            LinkedIn
+          </a>
+        </div>
 
-          <p className="font-mono text-subtle text-xs mt-10 tracking-wide">{CONTACT_EMAIL}</p>
-        </FadeIn>
-      </div>
+        <a href={CONTACT_HREF} className="mt-8 text-sm text-subtle transition-colors duration-200 hover:text-fg">
+          {CONTACT_EMAIL}
+        </a>
+      </FadeIn>
     </section>
   )
 }

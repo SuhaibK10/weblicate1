@@ -1,84 +1,69 @@
 'use client'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { CONTACT_HREF } from '@/lib/site'
+import TechStack from '@/components/sections/TechStack'
 
-const lines = ['We build what', 'organizations run on.']
+const ease = [0.21, 0.47, 0.32, 0.98] as const
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center px-6 py-24">
-      {/* Dot grid */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
-        <defs>
-          <pattern id="hero-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(247,246,243,0.13)" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hero-dots)" />
-      </svg>
-      {/* Radial fade so dots vanish toward edges */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#0a0a0a_75%)] pointer-events-none" />
+    <section className="relative px-6 pb-24 pt-16 md:pb-32 md:pt-24">
+      {/* Soft brand glow behind the headline */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[900px] max-w-full -translate-x-1/2"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(47,176,168,0.10) 0%, transparent 65%)' }}
+      />
 
-      <div className="relative z-10 max-w-content mx-auto w-full">
-        <motion.p
-          className="font-mono text-subtle uppercase mb-8"
-          style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+      <div className="relative mx-auto flex max-w-content flex-col items-center text-center">
+        <motion.div
+          className="flex h-[88px] w-[88px] items-center justify-center rounded-full border border-border bg-gradient-to-b from-[#1b1d20] to-[#0e0f10] shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease }}
         >
-          (01) &nbsp;A technology consultancy
-        </motion.p>
+          <Image src="/mark.png" alt="Weblicate" width={48} height={48} priority />
+        </motion.div>
 
-        <h1
-          className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2.5rem, 9vw, 8rem)', lineHeight: 0.95, letterSpacing: '-0.02em' }}
+        <motion.h1
+          className="mt-8 max-w-3xl font-normal text-fg text-balance"
+          style={{ fontSize: 'clamp(2.25rem, 5.2vw, 3.75rem)', lineHeight: 1.1, letterSpacing: '-0.025em' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease }}
         >
-          {lines.map((line, i) => (
-            <span key={line} className="block overflow-hidden">
-              <motion.span
-                className="block"
-                initial={{ y: '110%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.7, delay: 0.15 + i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-              >
-                {line}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
+          We build what organizations run on.
+        </motion.h1>
 
         <motion.p
-          className="text-muted leading-relaxed max-w-xl mt-10"
-          style={{ fontSize: '1.0625rem' }}
+          className="mt-5 max-w-lg text-lg leading-snug text-muted text-balance"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
+          transition={{ duration: 0.6, delay: 0.25, ease }}
         >
-          Platforms, AI systems, and digital infrastructure — designed and
+          Platforms, AI systems, and digital infrastructure, designed and
           engineered for businesses that intend to lead.
         </motion.p>
 
         <motion.div
-          className="flex items-center gap-4 mt-10 flex-wrap"
+          className="mt-9 flex flex-wrap items-center justify-center gap-3"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
+          transition={{ duration: 0.6, delay: 0.35, ease }}
         >
-          <a
-            href={CONTACT_HREF}
-            className="bg-fg text-bg font-semibold text-base rounded px-7 py-3.5 hover:opacity-85 transition-opacity duration-200"
-          >
-            Start a conversation
-          </a>
-          <a
-            href="#work"
-            className="border border-border text-fg font-medium text-base rounded px-7 py-3.5 hover:border-border-hover transition-colors duration-200"
-          >
-            See the work →
-          </a>
+          <a href={CONTACT_HREF} className="pill-solid">Start a conversation</a>
+          <a href="#work" className="pill px-6 py-3 text-[0.9375rem]">See the work</a>
         </motion.div>
       </div>
+
+      <motion.div
+        className="relative mx-auto mt-20 max-w-content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <TechStack />
+      </motion.div>
     </section>
   )
 }

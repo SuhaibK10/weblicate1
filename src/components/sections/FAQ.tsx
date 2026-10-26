@@ -1,5 +1,6 @@
 import { FadeIn } from '@/components/animations/FadeIn'
 import { FAQItem } from '@/components/ui/FAQItem'
+import { SectionTitle } from '@/components/ui/SectionTitle'
 
 const faqs = [
   {
@@ -47,23 +48,15 @@ const faqs = [
 export default function FAQ() {
   return (
     <div>
-      <FadeIn>
-        <p className="font-mono text-subtle uppercase mb-4" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-          FAQ
-        </p>
-        <h2
-          className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '-0.02em' }}
-        >
-          Before we start.
-        </h2>
-      </FadeIn>
+      <SectionTitle title="Frequently asked questions" />
 
-      <div className="max-w-3xl mt-12">
-        {faqs.map((faq, i) => (
-          <FAQItem key={i} question={faq.q} answer={faq.a} />
-        ))}
-      </div>
+      <FadeIn delay={0.1}>
+        <div className="mt-6">
+          {faqs.map((faq, i) => (
+            <FAQItem key={i} question={faq.q} answer={faq.a} />
+          ))}
+        </div>
+      </FadeIn>
     </div>
   )
 }

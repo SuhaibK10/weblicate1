@@ -1,23 +1,20 @@
 import { FadeIn } from '@/components/animations/FadeIn'
+import { SectionTitle } from '@/components/ui/SectionTitle'
 
 const principles = [
   {
-    index: '01',
     title: 'Boring where it should be boring.',
     desc: 'Proven infrastructure, standard patterns, no experiments where reliability matters.',
   },
   {
-    index: '02',
     title: 'Fast is a feature.',
     desc: 'Weeks, not quarters. Momentum is part of the deliverable.',
   },
   {
-    index: '03',
     title: 'AI where it compounds.',
-    desc: 'In operations, decisions, and workflows — never as decoration.',
+    desc: 'In operations, decisions, and workflows. Never as decoration.',
   },
   {
-    index: '04',
     title: 'You own what we ship.',
     desc: 'Source, documentation, understanding. No hostage architecture.',
   },
@@ -26,27 +23,14 @@ const principles = [
 export default function Philosophy() {
   return (
     <div>
-      <FadeIn>
-        <p className="font-mono text-subtle uppercase mb-4" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-          (06) &nbsp;Philosophy
-        </p>
-        <h2
-          className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '-0.02em' }}
-        >
-          How we build.
-        </h2>
-      </FadeIn>
+      <SectionTitle title="How we build" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14 mt-16 max-w-4xl">
+      <div className="mt-8">
         {principles.map((p, i) => (
-          <FadeIn key={p.index} delay={i * 0.08}>
-            <div>
-              <span className="font-mono text-subtle text-xs">{p.index}</span>
-              <h3 className="text-xl font-bold text-fg mt-3">{p.title}</h3>
-              <p className="text-muted leading-relaxed mt-2" style={{ fontSize: '1rem' }}>
-                {p.desc}
-              </p>
+          <FadeIn key={p.title} delay={i * 0.06}>
+            <div className="flex flex-col gap-2 border-b border-border py-6 md:flex-row md:items-center md:justify-between md:gap-10">
+              <h3 className="text-xl font-light text-fg/90">{p.title}</h3>
+              <p className="text-sm leading-relaxed text-subtle md:max-w-xs md:text-right">{p.desc}</p>
             </div>
           </FadeIn>
         ))}

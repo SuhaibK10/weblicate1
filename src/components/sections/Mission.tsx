@@ -1,37 +1,38 @@
 import { FadeIn } from '@/components/animations/FadeIn'
 
+// Plain strings render as text, { pill } renders as a highlighted pill.
+// `after` is punctuation kept on the same line as its pill.
+const copy: (string | { pill: string; after?: string })[] = [
+  'Most organizations run on software that was ',
+  { pill: 'never built for them', after: '.' },
+  ' Spreadsheets doing the work of systems, tools stitched together by habit. We replace that with ',
+  { pill: 'digital platforms' },
+  ' and ',
+  { pill: 'AI systems' },
+  ' designed around how a business actually operates, and ',
+  { pill: 'engineered to be depended on', after: '.' },
+]
+
 export default function Mission() {
   return (
-    <div>
-      <FadeIn>
-        <p className="font-mono text-subtle uppercase mb-10" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-          (02) &nbsp;Mission
-        </p>
-      </FadeIn>
-
-      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-16 items-start">
-        <FadeIn delay={0.08}>
-          <blockquote
-            className="font-serif italic text-fg"
-            style={{ fontSize: 'clamp(1.9rem, 3.6vw, 3rem)', lineHeight: 1.15 }}
-          >
-            &ldquo;Most organizations run on software that was never built for them.&rdquo;
-          </blockquote>
-        </FadeIn>
-
-        <FadeIn delay={0.16}>
-          <div className="text-muted leading-[1.8] space-y-4" style={{ fontSize: '1.0625rem' }}>
-            <p>
-              Spreadsheets doing the work of systems. Tools stitched together by
-              habit. Processes held up by effort alone.
-            </p>
-            <p>
-              We replace that — with software designed around how a business
-              actually operates, and engineered to be depended on.
-            </p>
-          </div>
-        </FadeIn>
-      </div>
-    </div>
+    <FadeIn>
+      <p
+        className="mx-auto max-w-3xl text-center font-light text-fg/90"
+        style={{ fontSize: 'clamp(1.25rem, 2.4vw, 1.625rem)', lineHeight: 2.1 }}
+      >
+        {copy.map((part, i) =>
+          typeof part === 'string' ? (
+            part
+          ) : (
+            <span key={i} className="whitespace-nowrap">
+              <span className={`pill ml-1 py-0.5 align-middle leading-normal ${part.after ? 'mr-0.5' : 'mr-1'}`}>
+                <span className="text-shimmer">{part.pill}</span>
+              </span>
+              {part.after}
+            </span>
+          ),
+        )}
+      </p>
+    </FadeIn>
   )
 }

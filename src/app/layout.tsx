@@ -1,25 +1,11 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Newsreader } from 'next/font/google'
+import { Hanken_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const geist = Geist({
+const hanken = Hanken_Grotesk({
   subsets: ['latin'],
-  variable: '--font-geist',
-  display: 'swap',
-})
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-geist-mono',
-  display: 'swap',
-})
-
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  style: ['italic'],
-  weight: ['400', '500'],
-  variable: '--font-newsreader',
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-hanken',
   display: 'swap',
 })
 
@@ -55,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${newsreader.variable}`}>
+    <html lang="en" className={hanken.variable}>
       <body className="bg-bg text-fg font-sans antialiased">
         {children}
       </body>

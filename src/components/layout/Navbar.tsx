@@ -1,81 +1,81 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { CONTACT_HREF } from '@/lib/site'
 
 const navLinks = [
+  { label: 'Work',         href: '#work' },
   { label: 'Capabilities', href: '#capabilities' },
   { label: 'Industries',   href: '#industries' },
-  { label: 'Work',         href: '#work' },
   { label: 'Philosophy',   href: '#philosophy' },
+  { label: 'FAQ',          href: '#faq' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link href="/">
-          <Image src="/logo.jpeg" alt="Weblicate" width={80} height={40} className="object-contain" />
+    <header
+      className={`sticky top-0 z-50 transition-colors duration-300 ${
+        scrolled || open ? 'bg-bg/75 backdrop-blur-xl' : 'bg-transparent'
+      }`}
+    >
+      <div className="relative mx-auto flex max-w-content items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image src="/mark.png" alt="" width={26} height={26} priority />
+          <span className="text-[0.9375rem] font-medium tracking-tight text-fg">Weblicate</span>
         </Link>
 
         {/* Desktop center nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-fg transition-colors duration-200"
+              className="text-sm font-normal text-fg/75 transition-colors duration-200 hover:text-fg"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href={CONTACT_HREF}
-            className="bg-fg text-bg font-semibold text-sm rounded px-4 py-2 hover:opacity-85 transition-opacity duration-200"
-          >
-            Talk to us
-          </a>
-        </div>
+        <a href={CONTACT_HREF} className="pill hidden text-sm md:inline-flex">
+          Talk to us
+        </a>
 
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden text-fg"
+          className="text-fg md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
       </div>
 
-      {/* Mobile menu — numbered list, CTA at bottom */}
       {open && (
-        <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-md px-6 py-8 flex flex-col gap-6">
-          {navLinks.map((link, i) => (
+        <div className="flex flex-col gap-5 px-6 pb-8 pt-4 md:hidden">
+          {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="flex items-baseline gap-4 text-xl font-semibold text-fg"
+              className="text-2xl font-light text-fg"
             >
-              <span className="font-mono text-subtle text-xs">
-                {String(i + 1).padStart(2, '0')}
-              </span>
               {link.label}
             </a>
           ))}
-          <a
-            href={CONTACT_HREF}
-            className="bg-fg text-bg font-semibold text-sm rounded px-4 py-3.5 hover:opacity-85 transition-opacity duration-200 text-center mt-4"
-          >
+          <a href={CONTACT_HREF} className="pill-solid mt-4 justify-center">
             Talk to us
           </a>
         </div>

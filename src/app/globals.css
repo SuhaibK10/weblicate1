@@ -5,24 +5,36 @@
 @layer base {
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
   /* No element may widen the page; sections that scroll do so internally */
   html, body { overflow-x: clip; }
 
   body {
     background: #0a0a0a;
-    color: #f7f6f3;
-    font-family: var(--font-geist), system-ui, sans-serif;
+    color: #edeef0;
+    font-family: var(--font-hanken), system-ui, sans-serif;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::selection { background: rgba(77,107,254,0.35); color: #ffffff; }
+  /* Film grain over the whole page */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: rgba(79,191,165,0.35); color: #ffffff; }
 
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: #0a0a0a; }
-  ::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -33,13 +45,38 @@
   }
 }
 
+@layer components {
+  /* Rounded pill: buttons, tags, inline highlights */
+  .pill {
+    @apply inline-flex items-center rounded-full border border-border bg-white/[0.02] px-4 py-1.5 text-fg transition-colors duration-200;
+  }
+  a.pill:hover, button.pill:hover { @apply border-border-hover bg-white/[0.05]; }
+
+  .pill-solid {
+    @apply inline-flex items-center rounded-full bg-fg px-6 py-3 text-[0.9375rem] font-medium text-bg transition-opacity duration-200 hover:opacity-85;
+  }
+
+  /* Square chip used for tag lists */
+  .chip {
+    @apply inline-flex items-center rounded-lg border border-border bg-white/[0.03] px-3 py-1.5 text-sm text-fg/85 transition-colors duration-200;
+  }
+}
+
 @layer utilities {
   .text-balance { text-wrap: balance; }
 
-  .text-glow {
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.6) 100%);
+  /* Light sweep across text, used inside pills */
+  .text-shimmer {
+    background: linear-gradient(90deg, #6b7177 0%, #edeef0 40%, #edeef0 60%, #6b7177 100%);
+    background-size: 250% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    @apply animate-shimmer;
+  }
+
+  .fade-x {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 }

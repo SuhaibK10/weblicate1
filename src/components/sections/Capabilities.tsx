@@ -1,32 +1,28 @@
 import { FadeIn } from '@/components/animations/FadeIn'
+import { SectionTitle } from '@/components/ui/SectionTitle'
 
 const capabilities = [
   {
-    index: '01',
     title: 'Digital Platforms',
     line: 'Software that becomes the way the company works.',
     items: ['Enterprise applications', 'Customer portals', 'Internal systems', 'SaaS products'],
   },
   {
-    index: '02',
     title: 'AI Systems',
-    line: 'Intelligence embedded in operations — not bolted on.',
+    line: 'Intelligence embedded in operations, not bolted on.',
     items: ['AI agents', 'Workflow automation', 'Knowledge systems', 'Decision support'],
   },
   {
-    index: '03',
     title: 'Industry Software',
     line: 'Purpose-built for how each industry actually runs.',
     items: ['School & hospital systems', 'Restaurant operations', 'Retail & logistics platforms', 'Manufacturing software'],
   },
   {
-    index: '04',
     title: 'Product Engineering',
     line: 'The full stack, owned end to end.',
     items: ['Architecture', 'UX & frontend', 'Backend & APIs', 'Cloud & infrastructure'],
   },
   {
-    index: '05',
     title: 'Strategic Consulting',
     line: 'Deciding what to build is half the work.',
     items: ['Technology strategy', 'Digital transformation', 'Software architecture', 'AI adoption'],
@@ -36,34 +32,22 @@ const capabilities = [
 export default function Capabilities() {
   return (
     <div>
-      <FadeIn>
-        <p className="font-mono text-subtle uppercase mb-4" style={{ fontSize: '0.6875rem', letterSpacing: '0.12em' }}>
-          (03) &nbsp;Capabilities
-        </p>
-        <h2
-          className="font-extrabold text-fg"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '-0.02em' }}
-        >
-          What we build.
-        </h2>
-      </FadeIn>
+      <SectionTitle
+        title="What we build"
+        intro="A technology consultancy that designs and engineers the software organizations run on."
+      />
 
-      <div className="mt-16 border-t border-border">
+      <div className="mt-10">
         {capabilities.map((cap, i) => (
-          <FadeIn key={cap.index} delay={i * 0.06}>
-            <div className="group grid grid-cols-1 md:grid-cols-[4rem_1fr_1fr] gap-4 md:gap-8 py-10 border-b border-border hover:bg-accent-dim transition-colors duration-300 md:px-4 md:-mx-4">
-              <span className="font-mono text-subtle text-sm pt-1.5">{cap.index}</span>
+          <FadeIn key={cap.title} delay={i * 0.05}>
+            <div className="group flex flex-col gap-4 border-b border-border py-6 md:flex-row md:items-center md:justify-between md:gap-10">
               <div>
-                <h3 className="text-2xl font-bold text-fg">{cap.title}</h3>
-                <p className="font-serif italic text-muted mt-2" style={{ fontSize: '1.0625rem' }}>
-                  {cap.line}
-                </p>
+                <h3 className="text-2xl font-light text-fg md:text-[1.625rem]">{cap.title}</h3>
+                <p className="mt-1 text-sm text-subtle transition-colors duration-300 group-hover:text-muted">{cap.line}</p>
               </div>
-              <ul className="space-y-1.5 md:pt-1.5">
+              <ul className="flex flex-wrap gap-x-5 gap-y-1.5 md:max-w-[50%] md:justify-end">
                 {cap.items.map((item) => (
-                  <li key={item} className="text-sm text-muted">
-                    {item}
-                  </li>
+                  <li key={item} className="text-sm text-fg/75">{item}</li>
                 ))}
               </ul>
             </div>
