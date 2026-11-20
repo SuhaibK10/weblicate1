@@ -1,68 +1,40 @@
-'use client'
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { FadeIn } from '@/components/animations/FadeIn'
-import { SectionTitle } from '@/components/ui/SectionTitle'
-
-const industries = [
-  { name: 'Education',             line: 'Institutes run on paper and patience. We build the systems that run them instead.' },
-  { name: 'Healthcare',            line: 'Records, scheduling, billing: the parts of care that patients never see, done right.' },
-  { name: 'Retail',                line: 'From shelf to checkout to warehouse, one system that knows where everything is.' },
-  { name: 'Finance',               line: 'Software where correctness is not a feature. It is the product.' },
-  { name: 'Manufacturing',         line: 'Production, procurement, and inventory, visible for the first time.' },
-  { name: 'Hospitality',           line: 'Operations that move as fast as the service is supposed to.' },
-  { name: 'Logistics',             line: 'Every shipment, every handoff, accounted for.' },
-  { name: 'Public Sector',         line: 'Systems built for scale, scrutiny, and decades of use.' },
-  { name: 'Professional Services', line: 'Client work is a pipeline. We make it one.' },
-]
+import { SectionHeader } from '@/components/ui/SectionHeader'
+import { industries } from '@/lib/content'
 
 export default function Industries() {
-  const [active, setActive] = useState(0)
+  const total = String(industries.length).padStart(2, '0')
 
   return (
-    <div className="relative">
-      {/* Blue glow, as in the reference's skills block */}
-      <div
-        className="pointer-events-none absolute -right-20 -top-24 h-[420px] w-[420px] rounded-full md:right-0"
-        style={{ background: 'radial-gradient(circle, rgba(70,140,190,0.22) 0%, transparent 65%)' }}
-        aria-hidden="true"
+    <div>
+      <SectionHeader
+        index="05"
+        label="Industries"
+        title="Every industry runs on operations."
+        intro="We build for them. Each sector has its own truth about where the work actually happens."
       />
 
-      <div className="relative">
-        <SectionTitle title="Industries" intro="Every industry runs on operations. We build for them." />
-
-        <FadeIn delay={0.1}>
-          <div className="mt-8 flex max-w-2xl flex-wrap gap-2.5">
+      <FadeIn delay={0.1}>
+        {/* Grid on desktop; horizontal snap-scroll on mobile */}
+        <div className="no-scrollbar -mx-6 mt-12 overflow-x-auto px-6 md:mx-0 md:mt-16 md:overflow-visible md:px-0">
+          <ul className="flex w-max snap-x snap-mandatory gap-px overflow-hidden rounded-[6px] border border-border bg-border md:grid md:w-auto md:grid-cols-3">
             {industries.map((ind, i) => (
-              <button
+              <li
                 key={ind.name}
-                type="button"
-                onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
-                onClick={() => setActive(i)}
-                className={`chip ${i === active ? 'border-border-hover bg-white/[0.08] text-fg' : 'hover:border-border-hover'}`}
+                className="group flex w-[78vw] max-w-[320px] flex-shrink-0 snap-start flex-col bg-bg p-6 transition-colors duration-300 hover:bg-surface md:w-auto md:max-w-none md:p-8"
               >
-                {ind.name}
-              </button>
+                <span className="label">
+                  {String(i + 1).padStart(2, '0')}/{total}
+                </span>
+                <h3 className="mt-10 text-xl font-normal tracking-tight text-fg md:mt-14 md:text-2xl">{ind.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted transition-colors duration-300 group-hover:text-fg/80 text-pretty">
+                  {ind.line}
+                </p>
+              </li>
             ))}
-          </div>
-
-          <div className="mt-8 min-h-[4rem] max-w-xl" aria-live="polite">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={active}
-                className="text-xl font-light leading-snug text-fg/85"
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.25 }}
-              >
-                {industries[active].line}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-        </FadeIn>
-      </div>
+          </ul>
+        </div>
+      </FadeIn>
     </div>
   )
 }

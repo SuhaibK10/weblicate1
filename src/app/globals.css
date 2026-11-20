@@ -32,13 +32,16 @@
 
   ::selection { background: rgba(79,191,165,0.35); color: #ffffff; }
 
-  ::-webkit-scrollbar { width: 4px; }
+  :focus-visible { outline: 1px solid #4fbfa5; outline-offset: 3px; }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
   ::-webkit-scrollbar-track { background: #0a0a0a; }
   ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
@@ -46,7 +49,38 @@
 }
 
 @layer components {
-  /* Rounded pill: buttons, tags, inline highlights */
+  /* Mono label: section eyebrows, indices, metadata */
+  .label {
+    @apply font-mono text-[0.6875rem] font-normal uppercase tracking-[0.14em] text-subtle;
+  }
+
+  /* Primary action: solid off-white, mono caps, arrow nudges on hover */
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 rounded-[4px] bg-fg px-5 py-3.5 font-mono text-[0.75rem] font-medium uppercase tracking-[0.1em] text-bg transition-colors duration-200 hover:bg-white;
+  }
+
+  /* Secondary action: hairline outline */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2.5 rounded-[4px] border border-border px-5 py-3.5 font-mono text-[0.75rem] uppercase tracking-[0.1em] text-fg transition-colors duration-200 hover:border-border-hover hover:bg-white/[0.03];
+  }
+
+  /* Bracketed mono tag: [ Agentic workflows ] */
+  .tag {
+    @apply inline-flex items-center rounded-[3px] border border-border bg-white/[0.02] px-2 py-1 font-mono text-[0.6875rem] uppercase tracking-[0.06em] text-muted;
+  }
+
+  /* Text link with an accent underline that draws in */
+  .link-draw {
+    @apply relative inline-flex items-center gap-1.5 text-fg;
+    background-image: linear-gradient(#4fbfa5, #4fbfa5);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  .link-draw:hover { background-size: 100% 1px; }
+
+  /* Legacy pill styles, still used by older sections */
   .pill {
     @apply inline-flex items-center rounded-full border border-border bg-white/[0.02] px-4 py-1.5 text-fg transition-colors duration-200;
   }
@@ -56,7 +90,6 @@
     @apply inline-flex items-center rounded-full bg-fg px-6 py-3 text-[0.9375rem] font-medium text-bg transition-opacity duration-200 hover:opacity-85;
   }
 
-  /* Square chip used for tag lists */
   .chip {
     @apply inline-flex items-center rounded-lg border border-border bg-white/[0.03] px-3 py-1.5 text-sm text-fg/85 transition-colors duration-200;
   }
@@ -64,8 +97,18 @@
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
 
-  /* Light sweep across text, used inside pills */
+  /* Blueprint grid, faded out toward the edges */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(to right, rgba(237,238,240,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(237,238,240,0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
+  }
+
   .text-shimmer {
     background: linear-gradient(90deg, #6b7177 0%, #edeef0 40%, #edeef0 60%, #6b7177 100%);
     background-size: 250% 100%;
@@ -79,4 +122,7 @@
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
+
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
 }

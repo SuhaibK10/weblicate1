@@ -1,53 +1,41 @@
 import { FadeIn } from '@/components/animations/FadeIn'
-import { SectionTitle } from '@/components/ui/SectionTitle'
-
-const capabilities = [
-  {
-    title: 'Digital Platforms',
-    line: 'Software that becomes the way the company works.',
-    items: ['Enterprise applications', 'Customer portals', 'Internal systems', 'SaaS products'],
-  },
-  {
-    title: 'AI Systems',
-    line: 'Intelligence embedded in operations, not bolted on.',
-    items: ['AI agents', 'Workflow automation', 'Knowledge systems', 'Decision support'],
-  },
-  {
-    title: 'Industry Software',
-    line: 'Purpose-built for how each industry actually runs.',
-    items: ['School & hospital systems', 'Restaurant operations', 'Retail & logistics platforms', 'Manufacturing software'],
-  },
-  {
-    title: 'Product Engineering',
-    line: 'The full stack, owned end to end.',
-    items: ['Architecture', 'UX & frontend', 'Backend & APIs', 'Cloud & infrastructure'],
-  },
-  {
-    title: 'Strategic Consulting',
-    line: 'Deciding what to build is half the work.',
-    items: ['Technology strategy', 'Digital transformation', 'Software architecture', 'AI adoption'],
-  },
-]
+import { SectionHeader } from '@/components/ui/SectionHeader'
+import { capabilities } from '@/lib/content'
 
 export default function Capabilities() {
   return (
     <div>
-      <SectionTitle
-        title="What we build"
-        intro="A technology consultancy that designs and engineers the software organizations run on."
+      <SectionHeader
+        index="03"
+        label="Capabilities"
+        title="What we build."
+        intro="Five practice areas with AI at the center of each. One team, no handoffs in between."
       />
 
-      <div className="mt-10">
+      <div className="mt-12 border-b border-border md:mt-16">
         {capabilities.map((cap, i) => (
-          <FadeIn key={cap.title} delay={i * 0.05}>
-            <div className="group flex flex-col gap-4 border-b border-border py-6 md:flex-row md:items-center md:justify-between md:gap-10">
-              <div>
-                <h3 className="text-2xl font-light text-fg md:text-[1.625rem]">{cap.title}</h3>
-                <p className="mt-1 text-sm text-subtle transition-colors duration-300 group-hover:text-muted">{cap.line}</p>
+          <FadeIn key={cap.id} delay={i * 0.04}>
+            <div
+              id={`cap-${cap.slug}`}
+              className="group relative grid scroll-mt-24 grid-cols-1 gap-5 border-t border-border py-8 md:grid-cols-12 md:gap-10 md:py-10"
+            >
+              <span
+                className="absolute left-0 top-[-1px] h-px w-0 bg-brand transition-[width] duration-700 ease-out group-hover:w-full"
+                aria-hidden="true"
+              />
+              <p className="label md:col-span-1 md:pt-2">{cap.id}</p>
+              <div className="md:col-span-5">
+                <h3
+                  className="font-normal text-fg"
+                  style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+                >
+                  {cap.title}
+                </h3>
+                <p className="mt-2 text-muted transition-colors duration-300 group-hover:text-fg/85">{cap.line}</p>
               </div>
-              <ul className="flex flex-wrap gap-x-5 gap-y-1.5 md:max-w-[50%] md:justify-end">
+              <ul className="flex flex-wrap content-start gap-2 md:col-span-6 md:justify-end md:pt-2">
                 {cap.items.map((item) => (
-                  <li key={item} className="text-sm text-fg/75">{item}</li>
+                  <li key={item} className="tag">{item}</li>
                 ))}
               </ul>
             </div>

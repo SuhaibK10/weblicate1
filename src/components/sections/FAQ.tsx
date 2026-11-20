@@ -1,8 +1,22 @@
+import { ArrowRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { FAQItem } from '@/components/ui/FAQItem'
-import { SectionTitle } from '@/components/ui/SectionTitle'
+import { SectionHeader } from '@/components/ui/SectionHeader'
+import { CONTACT_HREF } from '@/lib/site'
 
 const faqs = [
+  {
+    q: 'What does "AI-native" mean at Weblicate?',
+    a: 'AI is part of the system design from day one, not a feature added after launch. Data, workflows, and interfaces are built so models and agents can work inside them. Every AI component is evaluated against your real data before launch and monitored in production after, and the system stays model-agnostic so you can switch providers as prices and capabilities change.',
+  },
+  {
+    q: 'Does every project need AI?',
+    a: "No. Part of scoping is deciding where AI earns its place and where plain, reliable software is the better answer. If AI isn't worth it for your problem, we'll say so.",
+  },
+  {
+    q: 'Which AI models do you work with?',
+    a: 'We are model-agnostic. We choose between frontier model APIs and open-source models based on accuracy, cost, latency, and data-privacy needs for your use case, and design the system so the model can be swapped later without a rebuild.',
+  },
   {
     q: 'How long does a project take?',
     a: 'Landing pages: 5–7 days. Full websites: 10–14 days. MVPs and AI systems: 3–6 weeks depending on scope. We agree on a timeline before starting.',
@@ -21,7 +35,7 @@ const faqs = [
   },
   {
     q: 'What do you need from me to start?',
-    a: "A short brief: what you're building, who it's for, and roughly what you need. We handle everything from there. A 15-minute call is enough to kick off most projects.",
+    a: "A short brief: what you're building, who it's for, and roughly what you need. We handle everything from there. A 20-minute call is enough to kick off most projects.",
   },
   {
     q: 'Do you build ERP systems for small and medium businesses?',
@@ -45,15 +59,40 @@ const faqs = [
   },
 ]
 
+// FAQPage structured data so answers can surface directly in search results
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
 export default function FAQ() {
   return (
     <div>
-      <SectionTitle title="Frequently asked questions" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      <SectionHeader
+        index="08"
+        label="FAQ"
+        title="Questions, answered."
+        intro="AI, timelines, engagement, and what we build. If yours isn't here, ask it directly."
+      >
+        <a href={CONTACT_HREF} className="link-draw mt-5 font-mono text-[0.75rem] uppercase tracking-[0.1em]">
+          Ask a question <ArrowRight size={13} strokeWidth={1.75} />
+        </a>
+      </SectionHeader>
 
       <FadeIn delay={0.1}>
-        <div className="mt-6">
+        <div className="mt-12 border-b border-border md:mt-16">
           {faqs.map((faq, i) => (
-            <FAQItem key={i} question={faq.q} answer={faq.a} />
+            <FAQItem key={faq.q} index={i} question={faq.q} answer={faq.a} />
           ))}
         </div>
       </FadeIn>

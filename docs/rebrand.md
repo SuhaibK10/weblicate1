@@ -1,16 +1,18 @@
 # Weblicate — Brand Redefinition
 
-**From web agency to technology consultancy.**
+**From web agency to AI-native technology consultancy.**
 This document is the single source of truth for the new positioning, copy, architecture, and design system.
 
 ---
 
 ## 1. Positioning Statement
 
-> Weblicate is a technology consultancy that designs and engineers the software organizations run on — digital platforms, AI systems, and industry infrastructure for businesses that intend to lead.
+> Weblicate is an AI-native technology consultancy that designs and engineers the software organizations run on — AI systems, digital platforms, and industry infrastructure for businesses that intend to lead.
 
 One line, internal use:
 **"We don't build websites. We build the systems behind the business."**
+
+**Category:** AI-native technology consultancy. Use the full phrase in the hero badge, page titles, the footer description, and the FAQ. Do not repeat it in every heading: the term only earns trust when the site says what it changes. The homepage's "AI-native, defined" section does that, in five concrete contrasts (architecture, placement, quality, ownership, judgment).
 
 ---
 
@@ -310,9 +312,9 @@ Until then, the nav omits it entirely.
 
 ## 15. SEO Messaging
 
-- **Title:** Weblicate — Technology Consultancy · Software, AI Systems & Digital Platforms
-- **Description:** Weblicate designs and engineers the software organizations run on: digital platforms, AI systems, and industry software for education, healthcare, retail, manufacturing, and finance.
-- **OG description:** The systems behind the business. A technology consultancy building platforms, AI systems, and digital infrastructure.
+- **Title:** Weblicate — AI-Native Technology Consultancy · AI Systems, Platforms & Industry Software
+- **Description:** Weblicate is an AI-native technology consultancy. We design and engineer the software organizations run on: AI systems, digital platforms, and industry software for education, healthcare, retail, manufacturing, and finance.
+- **OG description:** The systems behind the business. AI systems, platforms, and digital infrastructure, with intelligence designed in from day one.
 - Page pattern: `{Capability/Industry} — Weblicate` with operational-language descriptions, never feature lists.
 
 ## 16. Mobile Experience
